@@ -9,21 +9,18 @@ const whatsappNumber = '919427327949';
 
 const schedule = [
   {
-    number: '01',
     time: '8:00 AM',
     title: 'Morning Aarti',
     text: 'Begin the day with peaceful darshan, puja and aarti.',
     icon: 'diya',
   },
   {
-    number: '02',
     time: '12:00 PM',
     title: 'Mahaprasad',
     text: 'Join us for prasad and receive the blessings of Bappa.',
     icon: 'food',
   },
   {
-    number: '03',
     time: '8:00 PM',
     title: 'Evening Aarti',
     text: 'Come together for devotion, lamps and the evening aarti.',
@@ -383,9 +380,7 @@ export default function Home() {
 
           <section className="hero section-pad">
 
-            <div className="mandala m1" />
-
-            <div className="mandala m2" />
+          
 
             <p className="sanskrit reveal">
               ॥ SHREE GANESHAYA NAMAHA ॥
@@ -409,7 +404,7 @@ export default function Home() {
               <div className="ganesha-glow" />
 
               <img
-                src="/images/ganesha.webp"
+                src="/images/ganesha2.webp"
                 alt="Ganpati Bappa"
                 className="ganesha-image"
               />
@@ -574,16 +569,14 @@ export default function Home() {
 
               <article className="royal-card reveal">
 
-                <div className="event-number">
-                  01
-                </div>
+              
 
                 <div className="event-icon">
                   <CalendarIcon />
                 </div>
 
                 <h3>
-                  Ganpati Arrival
+                  Ganpati Aagman
                 </h3>
 
                 <strong>
@@ -601,9 +594,7 @@ export default function Home() {
 
               <article className="royal-card reveal">
 
-                <div className="event-number">
-                  02
-                </div>
+                
 
                 <div className="event-icon">
                   <ClockIcon />
@@ -614,12 +605,11 @@ export default function Home() {
                 </h3>
 
                 <strong>
-                  11:30 AM
+                  14 September 2026
                 </strong>
 
-                <p>
-                  A sacred beginning with
-                  prayers and blessings
+                <p className="event-time">
+                  11:30 PM
                 </p>
 
               </article>
@@ -629,9 +619,7 @@ export default function Home() {
 
               <article className="royal-card reveal">
 
-                <div className="event-number">
-                  03
-                </div>
+                
 
                 <div className="event-icon">
                   <LocationIcon />
