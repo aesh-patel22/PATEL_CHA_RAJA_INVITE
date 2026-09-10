@@ -31,7 +31,7 @@ const schedule = [
 const family = [
   {
     name: 'Nikin Patel',
-    photo: '/images/hosts/nikin1.webp',
+    photo: '/images/hosts/nikin2.webp',
   },
   {
     name: 'Bhakti Patel',
