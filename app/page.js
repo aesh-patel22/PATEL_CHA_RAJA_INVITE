@@ -347,6 +347,9 @@ useEffect(() => {
             <p className="eyebrow">
               A JOYOUS INVITATION
             </p>
+             <div className="footer-om">
+              ॐ
+            </div>
         
             <h1>
               PATEL CHA RAJA
