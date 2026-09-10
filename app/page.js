@@ -39,7 +39,7 @@ const family = [
   },
   {
     name: 'Aesha Patel',
-    photo: '/images/hosts/aesha1.webp',
+    photo: '/images/hosts/aesha2.webp',
   },
   {
     name: 'Shiv Patel',
@@ -321,7 +321,11 @@ export default function Home() {
             <p className="eyebrow">
               A JOYOUS INVITATION
             </p>
-
+        
+             <div className="footer-om">
+              ॐ
+            </div>
+        
             <h1>
               PATEL CHA RAJA
             </h1>
