@@ -39,11 +39,11 @@ const family = [
   },
   {
     name: 'Aesha Patel',
-    photo: '/images/hosts/aesha.webp',
+    photo: '/images/hosts/aesha1.webp',
   },
   {
     name: 'Shiv Patel',
-    photo: '/images/hosts/shiv.webp',
+    photo: '/images/hosts/shivog.webp',
   },
 ];
 
@@ -316,9 +316,7 @@ export default function Home() {
               ॥ SHREE GANESHAYA NAMAHA ॥
             </p>
 
-            <div className="om">
-              ॐ
-            </div>
+           <i class="fi fi-ss-om"></i>
 
             <p className="eyebrow">
               A JOYOUS INVITATION
