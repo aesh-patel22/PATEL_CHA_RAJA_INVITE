@@ -172,35 +172,54 @@ export default function Home() {
   const audioRef = useRef(null);
   const wasPlayingRef = useRef(false);
 
-  /* =========================================
-     REVEAL ANIMATION
-     ========================================= */
+ /* =========================================
+   REVEAL ANIMATION
+   ========================================= */
 
 useEffect(() => {
-  const stopMusic = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
-
-    setSoundOn(false);
-    wasPlayingRef.current = false;
+  const reveal = () => {
+    document.querySelectorAll('.reveal').forEach((el) => {
+      if (
+        el.getBoundingClientRect().top <
+        window.innerHeight - 80
+      ) {
+        el.classList.add('visible');
+      }
+    });
   };
 
-  // When user switches tab/app
+  reveal();
+
+  window.addEventListener('scroll', reveal, {
+    passive: true,
+  });
+
+  return () => {
+    window.removeEventListener('scroll', reveal);
+  };
+}, [opened]);
+
+/* =========================================
+   MUSIC: PAUSE ON TAB / APP SWITCH
+   ========================================= */
+
+useEffect(() => {
   const handleVisibilityChange = async () => {
     if (document.hidden) {
-      // Remember whether music was playing
+      // Remember whether music was actually playing
       wasPlayingRef.current =
         audioRef.current && !audioRef.current.paused;
 
-      // Pause music
+      // Pause while user is away
       if (audioRef.current) {
         audioRef.current.pause();
       }
     } else {
-      // Resume only if music was playing before leaving
-      if (wasPlayingRef.current && audioRef.current) {
+      // Resume only if it was playing before leaving
+      if (
+        wasPlayingRef.current &&
+        audioRef.current
+      ) {
         try {
           await audioRef.current.play();
           setSoundOn(true);
@@ -211,23 +230,39 @@ useEffect(() => {
     }
   };
 
-  // Completely stop when page is closed/leaved
-  window.addEventListener('pagehide', stopMusic);
-  window.addEventListener('beforeunload', stopMusic);
-
-  // Pause/resume when tab visibility changes
   document.addEventListener(
     'visibilitychange',
     handleVisibilityChange
   );
 
   return () => {
-    window.removeEventListener('pagehide', stopMusic);
-    window.removeEventListener('beforeunload', stopMusic);
     document.removeEventListener(
       'visibilitychange',
       handleVisibilityChange
     );
+  };
+}, []);
+
+/* =========================================
+   MUSIC: STOP WHEN PAGE IS CLOSED / LEFT
+   ========================================= */
+
+useEffect(() => {
+  const stopMusic = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    wasPlayingRef.current = false;
+  };
+
+  window.addEventListener('pagehide', stopMusic);
+  window.addEventListener('beforeunload', stopMusic);
+
+  return () => {
+    window.removeEventListener('pagehide', stopMusic);
+    window.removeEventListener('beforeunload', stopMusic);
   };
 }, []);
 
@@ -307,7 +342,7 @@ useEffect(() => {
               ॥ SHREE GANESHAYA NAMAHA ॥
             </p>
 
-           <i class="fi fi-ss-om"></i>
+           <i className="fi fi-ss-om"></i>
 
             <p className="eyebrow">
               A JOYOUS INVITATION
