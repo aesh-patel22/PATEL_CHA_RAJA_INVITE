@@ -1618,3 +1618,9 @@ footer small {
     transform: translateY(-35px);
   }
 }
+/* Mobile: move Arrival & Ceremony content upward */
+@media (max-width: 768px) {
+  .schedule {
+    transform: translateY(-30px);
+  }
+}
