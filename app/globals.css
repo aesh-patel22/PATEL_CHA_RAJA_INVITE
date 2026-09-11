@@ -1606,3 +1606,14 @@ footer small {
   }
 
 }
+@media (max-width: 768px) {
+  .hero-title {
+    transform: translateY(-20px);
+  }
+}
+/* Mobile - move Sacred Schedule upward */
+@media (max-width: 768px) {
+  .schedule {
+    transform: translateY(-30px);
+  }
+}
