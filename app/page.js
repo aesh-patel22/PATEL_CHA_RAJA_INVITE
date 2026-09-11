@@ -636,7 +636,7 @@ useEffect(() => {
                 </strong>
 
                 <p className="event-time">
-                  11:30 PM
+                  11:30 AM
                 </p>
 
               </article>
